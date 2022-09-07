@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require ("body-parser")
 // const mongoose = require("mongoose");
 // const routes = require("./routes/index.js");
 // const cors = require("cors")
@@ -7,13 +8,14 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-// app.use("/", routes);
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
-//mongoDB connection
-// mongoose
-//   .connect(process.env.MONGODB_URI)
-//   .then(() => console.log("Connected to MongoDB Atlas"))
-//   .catch((error) => console.error(error));
+app.use("/", (req, res) => {
+    res.send("Hola Mundo")
+});
+
+
 
 app.listen(port, () => console.log("Server listening on port", port));
 
