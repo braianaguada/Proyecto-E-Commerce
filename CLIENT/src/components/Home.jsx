@@ -23,6 +23,7 @@ export default function Locals() {
           title = {products.title}
           price = {products.price}
           image = {products.image}
+          description = {products.description}
         />
       </Link>
     );
