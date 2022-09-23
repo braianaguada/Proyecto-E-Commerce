@@ -15,18 +15,22 @@ export default function Locals() {
   }, [dispatch]);
 
   return (
-  <div> {allLocals?.map((products) => {
-    return (
-      <Link className="linkStyle" to={"/home/" + products.id}>
-        <Products
-          id = {products.id}
-          title = {products.title}
-          price = {products.price}
-          image = {products.image}
-          description = {products.description}
-        />
-      </Link>
-    );
-  }
-  )}</div>)
+    <div>
+      {" "}
+      {allLocals?.map((products) => {
+        return (
+          <Link className="linkStyle" to={"/home/" + products.id}>
+            <Products
+              id={products.id}
+              title={products.title}
+              price={products.price}
+              image={products.image}
+              description={products.description}
+            />
+          </Link>
+        );
+      })}
+      <h1></h1>
+    </div>
+  );
 }
