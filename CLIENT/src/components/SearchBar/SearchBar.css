@@ -1,0 +1,28 @@
+.SearchButton {
+  color: rgb(231, 218, 218);
+  background-color: hsl(134, 66%, 28%);
+  font-size: 17px;
+  text-align: center;
+  padding: 10px 25px;
+  margin: 15px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 1px hwb(57 17% 56%);
+  cursor: pointer;
+}
+
+.Input-Search{
+  background-color: hsl(140, 9%, 87%);
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px hwb(57 17% 56%);
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.SearchButton:hover {
+  color: hsl(134, 66%, 28%);
+  background-color: rgb(231, 218, 218);
+}

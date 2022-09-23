@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLocals } from "../store/actions";
-import Products from "../components/Products"
+import { fetchLocals } from "../redux/actions";
+import Products from "../components/Products";
+import NavBar from "./NavBar";
+import Slider from "./Slider";
+import styles from './Home.module.css'
 
 export default function Locals() {
   const dispatch = useDispatch();
@@ -15,18 +18,23 @@ export default function Locals() {
   }, [dispatch]);
 
   return (
-  <div> {allLocals?.map((products) => {
-    return (
-      <Link className="linkStyle" to={"/home/" + products.id}>
-        <Products
-          id = {products.id}
-          title = {products.title}
-          price = {products.price}
-          image = {products.image}
-          description = {products.description}
-        />
-      </Link>
-    );
-  }
-  )}</div>)
+    <div className={styles.Home}>
+      <NavBar/>
+      <Slider/>
+      <div className={styles.Container}>
+        {" "}
+        {allLocals?.map((products) => {
+          return (  
+              <Products
+                id={products.id}
+                title={products.title}
+                price={products.price}
+                image={products.image}
+                description={products.description}
+              />
+          );
+        })}
+      </div>
+    </div>
+  );
 }
