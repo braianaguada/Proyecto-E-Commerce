@@ -75,7 +75,7 @@ h2 {
   z-index: 1;
 }
 .heart:hover{
-  filter: blur(52);
+  transform: scale(1.05);
 }
 .sum {
   position: absolute;
